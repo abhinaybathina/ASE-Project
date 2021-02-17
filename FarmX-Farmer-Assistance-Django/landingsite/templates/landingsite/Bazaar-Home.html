@@ -1,0 +1,550 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>E-Farming Portal</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'landingsite/Bazaar/samplefirst.css' %}">
+</head>
+
+<body id="section1">
+
+	<nav class="navbar navbar-expand-lg navbar-dark sticky-top" >
+
+ <span class="navbar-brand mb-0 h1" style="font-size: 3vw;"> <img class="image" src="{% static 'landingsite/Bazaar/pic1.jpg' %}" width="60" height="60">
+
+ <span class="brandforcolours" style="width: auto;">E-Farming Portal</span></span>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+
+      <!-- Anything inside of collapse navbar-collapse goes into the "hamburger" -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link active a" href="{% url 'UserHomepage' %}">Home<span class="sr-only">(current)</span></a></li>
+          <li class="nav-item"><a class="nav-link b" href="#section2">About</a></li>
+          <li class="nav-item"><a class="nav-link c" href="#section3">Products</a></li>
+         
+          <li class="nav-item"><a class="nav-link d" href="#section4">FAQ'S</a></li>
+          <li class="nav-item"><a class="nav-link e" href="#section5">Contact us</a></li>
+        </ul>
+      </div>
+    </nav>
+
+
+<div id="carouselsection">
+<div id="demo" class="carousel slide" data-ride="carousel" data-interval="3000">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+
+    <div class="carousel-item active">
+      <img  class="img-fluid" src="{% static 'landingsite/Bazaar/organicproducts.jpg' %}" alt="organicproducts">
+
+                     <div class="carousel-caption">
+                               <h1><span>Organic</span> products</h1>
+                                <h1>directly from the farm.</h1>
+                        </div>
+    
+    </div>
+
+    <div class="carousel-item">
+      <img  class="img-fluid" src="{% static 'landingsite/Bazaar/fruitseeds.jpg' %}" alt="fruitseeds">
+ 
+                          <div class="carousel-caption">
+                               <h1><span>Fertilizers</span></h1>
+                               <h1>freshly for clients.</h1>
+                        </div>
+     
+    </div>
+
+    <div class="carousel-item">
+      <img  class="img-fluid" src="{% static 'landingsite/Bazaar/vegetableseeds.jpg' %}" alt="vegetableseeds">
+
+                       <div class="carousel-caption">
+                               <h1><span>Pesticides</span></h1>
+                                <h1>The natural ingredients.</h1>
+                        </div>
+     	
+     </div>
+     
+    
+    <div class="carousel-item">
+      <img  class="img-fluid" src="{% static 'landingsite/Bazaar/differentseeds.jpg' %}" alt="differentseeds">
+
+                        <div class="carousel-caption">
+                               <h1>Different <span>crops</span></h1>
+                               <h1>Over 50 different crops.</h1>
+                        </div>
+     
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+
+</div>
+
+</div>
+
+<div id="section2" class="container-fluid jumbotron row" style="margin-bottom: auto;">   <!-- style="padding-top: 90px; "-->
+  <div class="col-sm-6" style="padding-top: 75px;padding-bottom: 75px">   <!--padding-bottom: 75px;-->
+
+  	<h1>About Us</h1>
+     <p>We have a lot of great new things for you but overall, the Farm Program we created in 2014 will remain.</p>
+     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+     consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
+  <div class="col-sm-6"> 
+    <img src="{% static 'landingsite/Bazaar/aboutimage.png' %}" style="max-width: 90%">
+  </div>
+  
+</div>
+
+
+
+  <div id="section3" class="container-fluid jumbotron" style="padding-top: 100px; margin-bottom: auto">
+
+    <h1 style="text-align: center;font-size: 5vw;font-family: 'Kalam',cursive; font-style: italic; margin-bottom: 20px;padding-top:20px;color:#ffffff;text-decoration: underline;">Products</h1>
+
+  <div class="cta filter">
+
+   <div class="list" style="margin-bottom: 5vw;">
+    <ul  style="text-align: center;">
+    <li class="all active" data-filter="all" style="font-size: 20px;">All</li>
+    <li class="fertilizers" data-filter="fertilizers" style="font-size: 20px;margin-left: 2vw;">Fertilizers</li>
+    <li class="pesticides" data-filter="pesticides" style="font-size: 20px;margin-left: 2vw">Pesticides</li>
+    <li class="grainseeds" data-filter="grainseeds" style="font-size: 20px;margin-left: 2vw">Grain Seeds</li>
+    <li class="organicseeds" data-filter="organicseeds" style="font-size: 20px;margin-left: 2vw">Organic Seeds</li>
+    </ul>
+    </div>
+</div>
+
+
+
+
+<div class="boxes row d-flex justify-content-center">
+
+
+ <!-- other anchor/boxes here ... -->
+ <div class="total col-lg-3 col-md-4 col-sm-12 text-center mr-2 mb-5" data-category="fertilizers">
+
+      <div class="images">
+          <a class="fertilizers" href="#"><img class="img-fluid" src="{% static 'landingsite/Bazaar/algaetech.jpg' %}" alt="image"></a>
+          <h3 style="text-align: center; margin-bottom: 0px; padding: 5px 5px;">Rs.290/-</h3>
+      </div>
+
+      <h3 style="text-align: center;"><a href="#" style="color: #ffffff" onMouseOver="this.style.color='#ff4301'" onMouseOut="this.style.color='#ffffff'">Algaetech</a></h3>
+
+     </div>
+ 
+     <div class="total col-lg-3 col-md-4 col-sm-12 text-center mr-2 mb-5" data-category="fertilizers">
+
+          <div class="images" >
+              <a class="fertilizers" href="#"><img class="img-fluid" src="{% static 'landingsite/Bazaar/bascoute.jpg' %}" alt="image"></a>
+              <h3 style="text-align: center; margin-bottom: 0px; padding: 5px 5px">Rs.399/-</h3>
+         </div>  
+
+     <h3 style="text-align: center;"><a href="#" onMouseOver="this.style.color='#ff4301'" onMouseOut="this.style.color='#ffffff'" style="color: #ffffff;">Bascoute</a></h3>
+     </div>
+
+     <div class="total col-lg-3 col-md-4 col-sm-12 text-center mr-2 mb-5" data-category="fertilizers">
+
+          <div class="images" >
+              <a class="fertilizers" href="#"><img class="img-fluid" src="{% static 'landingsite/Bazaar/casadeamor.jpg' %}" alt="image"></a>
+              <h3 style="text-align: center; margin-bottom: 0px; padding: 5px 5px">Rs.290/-</h3>
+         </div>  
+
+     <h3 style="text-align: center;"><a href="#" onMouseOver="this.style.color='#ff4301'" onMouseOut="this.style.color='#ffffff'" style="color: #ffffff;">Casa de amor</a></h3>
+     </div>
+
+     <div class="total col-lg-3 col-md-4 col-sm-12 text-center mr-2 mb-5" data-category="fertilizers">
+
+          <div class="images" >
+              <a class="fertilizers" href="#"><img class="img-fluid" src="{% static 'landingsite/Bazaar/earthmagicpotingsoil.jpg' %}" alt="image"></a>
+              <h3 style="text-align: center; margin-bottom: 0px; padding: 5px 5px">Rs.539/-</h3>
+         </div>  
+
+     <h3 style="text-align: center;"><a href="#" onMouseOver="this.style.color='#ff4301'" onMouseOut="this.style.color='#ffffff'" style="color: #ffffff;">Earth magic poting soil</a></h3>
+     </div>
+
+     <div class="total col-lg-3 col-md-4 col-sm-12 text-center mr-2 mb-5" data-category="fertilizers">
+
+          <div class="images" >
+              <a class="fertilizers" href="#"><img class="img-fluid" src="{% static 'landingsite/Bazaar/rapidgrow.jpg' %}" alt="image"></a>
+              <h3 style="text-align: center; margin-bottom: 0px; padding: 5px 5px">Rs.299/-</h3>
+         </div>  
+
+     <h3 style="text-align: center;"><a href="#" onMouseOver="this.style.color='#ff4301'" onMouseOut="this.style.color='#ffffff'" style="color: #ffffff;">Rapid Grow</a></h3>
+     </div>
+
+     <div class="total col-lg-3 col-md-4 col-sm-12 text-center mr-2 mb-5" data-category="fertilizers">
+
+          <div class="images" >
+              <a class="fertilizers" href="#"><img class="img-fluid" src="{% static 'landingsite/Bazaar/plantnutrients.jpg' %}" alt="image"></a>
+              <h3 style="text-align: center; margin-bottom: 0px; padding: 5px 5px">Rs.199/-</h3>
+         </div>  
+
+     <h3 style="text-align: center;"><a href="#" onMouseOver="this.style.color='#ff4301'" onMouseOut="this.style.color='#ffffff'" style="color: #ffffff;">Plant Nutrients</a></h3>
+     </div>
+
+     <div class="total col-lg-3 col-md-4 col-sm-12 text-center mr-2 mb-5" data-category="fertilizers">
+
+          <div class="images" >
+              <a class="fertilizers" href="#"><img class="img-fluid" src="{% static 'landingsite/Bazaar/ugaoocowmanure.jpg' %}" alt="image"></a>
+              <h3 style="text-align: center; margin-bottom: 0px; padding: 5px 5px">Rs.360/-</h3>
+         </div>  
+
+     <h3 style="text-align: center;"><a href="#" onMouseOver="this.style.color='#ff4301'" onMouseOut="this.style.color='#ffffff'" style="color: #ffffff;">Ugaoo Cow Manure</a></h3>
+     </div>
+
+     <div class="total col-lg-3 col-md-4 col-sm-12 text-center mr-2 mb-5" data-category="fertilizers">
+
+          <div class="images" >
+              <a class="fertilizers" href="#"><img class="img-fluid" src="{% static 'landingsite/Bazaar/vermicompost.jpg' %}" alt="image"></a>
+              <h3 style="text-align: center; margin-bottom: 0px; padding: 5px 5px">Rs.599/-</h3>
+         </div>  
+
+     <h3 style="text-align: center;"><a href="#" onMouseOver="this.style.color='#ff4301'" onMouseOut="this.style.color='#ffffff'" style="color: #ffffff;">Vermi Compost</a></h3>
+     </div>
+
+     <div class="total col-lg-3 col-md-4 col-sm-12 text-center mr-2 mb-5" data-category="fertilizers">
+
+          <div class="images" >
+              <a class="fertilizers" href="#"><img class="img-fluid" src="{% static 'landingsite/Bazaar/miraclegrow.jpg' %}" alt="image"></a>
+              <h3 style="text-align: center; margin-bottom: 0px; padding: 5px 5px">Rs.125/-</h3>
+         </div>  
+
+     <h3 style="text-align: center;"><a href="#" onMouseOver="this.style.color='#ff4301'" onMouseOut="this.style.color='#ffffff'" style="color: #ffffff;">Miracle grow</a></h3>
+     </div>
+
+      <div class="total col-lg-3 col-md-4 col-sm-12 text-center mr-2 mb-5" data-category="pesticides">
+
+          <div class="images">
+              <a class="pesticides" href="#"><img  class="img-fluid" src="{% static 'landingsite/Bazaar/abtec.jpg' %}" alt="image"></a>
+              <h3 style="text-align: center; margin-bottom: 0px; padding: 5px 5px">Rs.189/-</h3>
+          </div>
+          
+      <h3 style="text-align: center; "><a href="#" onMouseOver="this.style.color='#ff4301'" onMouseOut="this.style.color='#ffffff'" style="color: #ffffff">AB Tec</a></h3>
+      </div>
+
+      <div class="total col-lg-3 col-md-4 col-sm-12 text-center mr-2 mb-5" data-category="pesticides">
+
+          <div class="images">
+               <a class="pesticides" href="#"><img class="img-fluid" src="{% static 'landingsite/Bazaar/accon.jpg' %}" alt="image"></a>
+               <h3 style="text-align: center;  margin-bottom: 0px; padding: 5px 5px">Rs.300/-</h3>
+          </div>
+     
+      <h3 style="text-align: center;"><a href="#" onMouseOver="this.style.color='#ff4301'" onMouseOut="this.style.color='#ffffff'" style="color: #ffffff">Accon</a></h3>
+      </div>
+
+      <div class="total col-lg-3 col-md-4 col-sm-12 text-center mr-2 mb-5" data-category="pesticides">
+
+          <div class="images">
+               <a class="pesticides" href="#"><img class="img-fluid" src="{% static 'landingsite/Bazaar/agroplus.jpg' %}" alt="image"></a>
+               <h3 style="text-align: center;  margin-bottom: 0px; padding: 5px 5px">Rs.659/-</h3>
+          </div>
+     
+      <h3 style="text-align: center;"><a href="#" onMouseOver="this.style.color='#ff4301'" onMouseOut="this.style.color='#ffffff'" style="color: #ffffff">Agro Plus</a></h3>
+      </div>
+
+      <div class="total col-lg-3 col-md-4 col-sm-12 text-center mr-2 mb-5" data-category="pesticides">
+
+          <div class="images">
+               <a class="pesticides" href="#"><img class="img-fluid" src="{% static 'landingsite/Bazaar/bloombuddy.jpg' %}" alt="image"></a>
+               <h3 style="text-align: center;  margin-bottom: 0px; padding: 5px 5px">Rs.550/-</h3>
+          </div>
+     
+      <h3 style="text-align: center;"><a href="#" onMouseOver="this.style.color='#ff4301'" onMouseOut="this.style.color='#ffffff'" style="color: #ffffff">Bloom Buddy</a></h3>
+      </div>
+
+      <div class="total col-lg-3 col-md-4 col-sm-12 text-center mr-2 mb-5" data-category="pesticides">
+
+          <div class="images">
+               <a class="pesticides" href="#"><img class="img-fluid" src="{% static 'landingsite/Bazaar/dndnansol.jpg' %}" alt="image"></a>
+               <h3 style="text-align: center;  margin-bottom: 0px; padding: 5px 5px">Rs.199/-</h3>
+          </div>
+     
+      <h3 style="text-align: center;"><a href="#" onMouseOver="this.style.color='#ff4301'" onMouseOut="this.style.color='#ffffff'" style="color: #ffffff">DND Nansol</a></h3>
+      </div>
+
+      <div class="total col-lg-3 col-md-4 col-sm-12 text-center mr-2 mb-5" data-category="pesticides">
+
+          <div class="images">
+               <a class="pesticides" href="#"><img class="img-fluid" src="{% static 'landingsite/Bazaar/glyphosphate.png' %}" alt="image"></a>
+               <h3 style="text-align: center;  margin-bottom: 0px; padding: 5px 5px">Rs.299/-</h3>
+          </div>
+     
+      <h3 style="text-align: center;"><a href="#" onMouseOver="this.style.color='#ff4301'" onMouseOut="this.style.color='#ffffff'" style="color: #ffffff">Glyphosphate</a></h3>
+      </div>
+
+      <div class="total col-lg-3 col-md-4 col-sm-12 text-center mr-2 mb-5" data-category="pesticides">
+
+          <div class="images">
+               <a class="pesticides" href="#"><img class="img-fluid" src="{% static 'landingsite/Bazaar/greenbeauveria.jpg' %}" alt="image"></a>
+               <h3 style="text-align: center;  margin-bottom: 0px; padding: 5px 5px">Rs.250/-</h3>
+          </div>
+     
+      <h3 style="text-align: center;"><a href="#" onMouseOver="this.style.color='#ff4301'" onMouseOut="this.style.color='#ffffff'" style="color: #ffffff">Green Beauveria</a></h3>
+      </div>
+
+      <div class="total col-lg-3 col-md-4 col-sm-12 text-center mr-2 mb-5" data-category="pesticides">
+
+          <div class="images">
+               <a class="pesticides" href="#"><img class="img-fluid" src="{% static 'landingsite/Bazaar/nematicide.jpg' %}" alt="image"></a>
+               <h3 style="text-align: center;  margin-bottom: 0px; padding: 5px 5px">Rs.250/-</h3>
+          </div>
+     
+      <h3 style="text-align: center;"><a href="#" onMouseOver="this.style.color='#ff4301'" onMouseOut="this.style.color='#ffffff'" style="color: #ffffff">Nematicide</a></h3>
+      </div>
+
+      <div class="total col-lg-3 col-md-4 col-sm-12 text-center mr-2 mb-5" data-category="pesticides">
+
+          <div class="images">
+               <a class="pesticides" href="#"><img class="img-fluid" src="{% static 'landingsite/Bazaar/neemoil.jpg' %}" alt="image"></a>
+               <h3 style="text-align: center;  margin-bottom: 0px; padding: 5px 5px">Rs.399/-</h3>
+          </div>
+     
+      <h3 style="text-align: center;"><a href="#" onMouseOver="this.style.color='#ff4301'" onMouseOut="this.style.color='#ffffff'" style="color: #ffffff">Neem Oil</a></h3>
+      </div>
+
+
+      <div class="total col-lg-3 col-md-4 col-sm-12 text-center mr-2 mb-5" data-category="grainseeds">
+          <div class="images">
+              <a class="grainseeds" href="#"><img class="img-fluid" src="{% static 'landingsite/Bazaar/barleyseeds.jpg' %}" alt="image"></a>
+              <h3 style="text-align: center; margin-bottom: 0px; padding: 5px 5px">Rs.149/-</h3>
+        </div>
+      
+      <h3 style="text-align: center;"><a href="#" onMouseOver="this.style.color='#ff4301'" onMouseOut="this.style.color='#ffffff'" style="color: #ffffff">Baarley Seeds</a></h3>
+      </div>
+
+
+      <div class="total col-lg-3 col-md-4 col-sm-12 text-center mr-2 mb-5" data-category="grainseeds">
+          <div class="images">
+               <a class="grainseeds" href="#"><img class="img-fluid" src="{% static 'landingsite/Bazaar/fenugreek.jpg' %}" alt="image"></a>
+               <h3 style="text-align: center; margin-bottom: 0px; padding: 5px 5px">Rs.149/-</h3>
+          </div>
+     
+      <h3 style="text-align: center;"><a href="#" onMouseOver="this.style.color='#ff4301'" onMouseOut="this.style.color='#ffffff'" style="color: #ffffff">Fenu Greek</a></h3>
+      </div>
+
+      <div class="total col-lg-3 col-md-4 col-sm-12 text-center mr-2 mb-5" data-category="grainseeds">
+          <div class="images">
+               <a class="grainseeds" href="#"><img class="img-fluid" src="{% static 'landingsite/Bazaar/fingermillets.jpg' %}" alt="image"></a>
+               <h3 style="text-align: center; margin-bottom: 0px; padding: 5px 5px">Rs.91/-</h3>
+          </div>
+     
+      <h3 style="text-align: center;"><a href="#" onMouseOver="this.style.color='#ff4301'" onMouseOut="this.style.color='#ffffff'" style="color: #ffffff">Finger Millets</a></h3>
+      </div>
+
+      <div class="total col-lg-3 col-md-4 col-sm-12 text-center mr-2 mb-5" data-category="grainseeds">
+          <div class="images">
+               <a class="grainseeds" href="#"><img class="img-fluid" src="{% static 'landingsite/Bazaar/pearlbarley.jpg' %}" alt="image"></a>
+               <h3 style="text-align: center; margin-bottom: 0px; padding: 5px 5px">Rs.51/-</h3>
+          </div>
+     
+      <h3 style="text-align: center;"><a href="#" onMouseOver="this.style.color='#ff4301'" onMouseOut="this.style.color='#ffffff'" style="color: #ffffff">Pearl Barley</a></h3>
+      </div>
+
+      <div class="total col-lg-3 col-md-4 col-sm-12 text-center mr-2 mb-5" data-category="grainseeds">
+          <div class="images">
+               <a class="grainseeds" href="#"><img class="img-fluid" src="{% static 'landingsite/Bazaar/pumpkinseeds.jpg' %}" alt="image"></a>
+               <h3 style="text-align: center; margin-bottom: 0px; padding: 5px 5px">Rs.149/-</h3>
+          </div>
+     
+      <h3 style="text-align: center;"><a href="#" onMouseOver="this.style.color='#ff4301'" onMouseOut="this.style.color='#ffffff'" style="color: #ffffff">Pumpkin Seeds</a></h3>
+      </div>
+
+
+      <div class="total col-lg-3 col-md-4 col-sm-12 text-center mr-2 mb-5" data-category="grainseeds">
+          <div class="images">
+               <a class="grainseeds" href="#"><img class="img-fluid" src="{% static 'landingsite/Bazaar/rajgira.jpg' %}" alt="image"></a>
+               <h3 style="text-align: center; margin-bottom: 0px; padding: 5px 5px">Rs.199/-</h3>
+          </div>
+     
+      <h3 style="text-align: center;"><a href="#" onMouseOver="this.style.color='#ff4301'" onMouseOut="this.style.color='#ffffff'" style="color: #ffffff">Rajgira</a></h3>
+      </div>
+
+      <div class="total col-lg-3 col-md-4 col-sm-12 text-center mr-2 mb-5" data-category="grainseeds">
+          <div class="images">
+               <a class="grainseeds" href="#"><img class="img-fluid" src="{% static 'landingsite/Bazaar/sunflowerseedsraw.jpg' %}" alt="image"></a>
+               <h3 style="text-align: center; margin-bottom: 0px; padding: 5px 5px">Rs.166/-</h3>
+          </div>
+     
+      <h3 style="text-align: center;"><a href="#" onMouseOver="this.style.color='#ff4301'" onMouseOut="this.style.color='#ffffff'" style="color: #ffffff">Sun Flower Seeds</a></h3>
+      </div>
+
+      <div class="total col-lg-3 col-md-4 col-sm-12 text-center mr-2 mb-5" data-category="grainseeds">
+          <div class="images">
+               <a class="grainseeds" href="#"><img class="img-fluid" src="{% static 'landingsite/Bazaar/wheatwhole.jpg' %}" alt="image"></a>
+               <h3 style="text-align: center; margin-bottom: 0px; padding: 5px 5px">Rs.160/-</h3>
+          </div>
+     
+      <h3 style="text-align: center;"><a href="#" onMouseOver="this.style.color='#ff4301'" onMouseOut="this.style.color='#ffffff'" style="color: #ffffff">Wheatwhole</a></h3>
+      </div>
+
+      <div class="total col-lg-3 col-md-4 col-sm-12 text-center mr-2 mb-5" data-category="grainseeds">
+          <div class="images">
+               <a class="grainseeds" href="#"><img class="img-fluid" src="{% static 'landingsite/Bazaar/quinoaseeds.jpg' %}" alt="image"></a>
+               <h3 style="text-align: center; margin-bottom: 0px; padding: 5px 5px">Rs.250/-</h3>
+          </div>
+     
+      <h3 style="text-align: center;"><a href="#" onMouseOver="this.style.color='#ff4301'" onMouseOut="this.style.color='#ffffff'" style="color: #ffffff">Quinoa seeds</a></h3>
+      </div>
+
+  
+
+
+      <div class="total col-lg-3 col-md-4 col-sm-12 text-center mr-2 mb-5" data-category="organicseeds">
+          <div class="images">
+               <a class="organicseeds" href="#"><img class="img-fluid" src="{% static 'landingsite/Bazaar/amaranthusseeds.jpg' %}" alt="image"></a>
+               <h3 style="text-align: center; margin-bottom: 0px; padding: 5px 5px">Rs.149/-</h3>
+          </div>
+     
+      <h3 style="text-align: center;"><a href="#" onMouseOver="this.style.color='#ff4301'" onMouseOut="this.style.color='#ffffff'" style="color: #ffffff">Amaranthus Seeds</a></h3>
+      </div>
+
+
+      <div class="total col-lg-3 col-md-4 col-sm-12 text-center mr-2 mb-5" data-category="organicseeds">
+          <div class="images">
+               <a class="organicseeds" href="#"><img class="img-fluid" src="{% static 'landingsite/Bazaar/peasseeds.jpg' %}" alt="image"></a>
+               <h3 style="text-align: center; margin-bottom: 0px; padding: 5px 5px">Rs.120/-</h3>
+          </div>
+     
+      <h3 style="text-align: center;"><a href="#" onMouseOver="this.style.color='#ff4301'" onMouseOut="this.style.color='#ffffff'" style="color: #ffffff">Peas Seeds</a></h3>
+      </div> 
+
+
+      <div class="total col-lg-3 col-md-4 col-sm-12 text-center mr-2 mb-5" data-category="organicseeds">
+          <div class="images">
+               <a class="organicseeds" href="#"><img class="img-fluid" src="{% static 'landingsite/Bazaar/blackgarlicseeds.jpg' %}" alt="image"></a>
+               <h3 style="text-align: center; margin-bottom: 0px; padding: 5px 5px">Rs.499/-</h3>
+          </div>
+     
+      <h3 style="text-align: center;"><a href="#" onMouseOver="this.style.color='#ff4301'" onMouseOut="this.style.color='#ffffff'" style="color: #ffffff">Black Garlic Seeds</a></h3>
+      </div>
+
+      <div class="total col-lg-3 col-md-4 col-sm-12 text-center mr-2 mb-5" data-category="organicseeds">
+          <div class="images">
+               <a class="organicseeds" href="#"><img class="img-fluid" src="{% static 'landingsite/Bazaar/cherryseeds.jpg' %}" alt="image"></a>
+               <h3 style="text-align: center; margin-bottom: 0px; padding: 5px 5px">Rs.149/-</h3>
+          </div>
+     
+      <h3 style="text-align: center;"><a href="#" onMouseOver="this.style.color='#ff4301'" onMouseOut="this.style.color='#ffffff'" style="color: #ffffff">Cherry Seeds</a></h3>
+      </div>
+
+      <div class="total col-lg-3 col-md-4 col-sm-12 text-center mr-2 mb-5" data-category="organicseeds">
+          <div class="images">
+               <a class="organicseeds" href="#"><img class="img-fluid" src="{% static 'landingsite/Bazaar/gardencressseeds.jpg' %}" alt="image"></a>
+               <h3 style="text-align: center; margin-bottom: 0px; padding: 5px 5px">Rs.290/-</h3>
+          </div>
+     
+      <h3 style="text-align: center;"><a href="#" onMouseOver="this.style.color='#ff4301'" onMouseOut="this.style.color='#ffffff'" style="color: #ffffff">Garden Cress Seeds</a></h3>
+      </div>
+
+      <div class="total col-lg-3 col-md-4 col-sm-12 text-center mr-2 mb-5" data-category="organicseeds">
+          <div class="images">
+               <a class="organicseeds" href="#"><img class="img-fluid" src="{% static 'landingsite/Bazaar/moringaseeds.jpg' %}" alt="image"></a>
+               <h3 style="text-align: center; margin-bottom: 0px; padding: 5px 5px">Rs.220/-</h3>
+          </div>
+     
+      <h3 style="text-align: center;"><a href="#" onMouseOver="this.style.color='#ff4301'" onMouseOut="this.style.color='#ffffff'" style="color: #ffffff">Moringa Seeds</a></h3>
+      </div>
+
+      <div class="total col-lg-3 col-md-4 col-sm-12 text-center mr-2 mb-5" data-category="organicseeds">
+          <div class="images">
+               <a class="organicseeds" href="#"><img class="img-fluid" src="{% static 'landingsite/Bazaar/raddishseeds.jpg' %}" alt="image"></a>
+               <h3 style="text-align: center; margin-bottom: 0px; padding: 5px 5px">Rs.199/-</h3>
+          </div>
+     
+      <h3 style="text-align: center;"><a href="#" onMouseOver="this.style.color='#ff4301'" onMouseOut="this.style.color='#ffffff'" style="color: #ffffff">Raddish Seeds</a></h3>
+      </div>
+
+      <div class="total col-lg-3 col-md-4 col-sm-12 text-center mr-2 mb-5" data-category="organicseeds">
+          <div class="images">
+               <a class="organicseeds" href="#"><img class="img-fluid" src="{% static 'landingsite/Bazaar/spanishseeds.jpg' %}" alt="image"></a>
+               <h3 style="text-align: center; margin-bottom: 0px; padding: 5px 5px">Rs.149/-</h3>
+          </div>
+     
+      <h3 style="text-align: center;"><a href="#" onMouseOver="this.style.color='#ff4301'" onMouseOut="this.style.color='#ffffff'" style="color: #ffffff">Spanish Seeds</a></h3>
+      </div>
+
+      <div class="total col-lg-3 col-md-4 col-sm-12 text-center mr-2 mb-5" data-category="organicseeds">
+          <div class="images">
+               <a class="organicseeds" href="#"><img class="img-fluid" src="{% static 'landingsite/Bazaar/turmericroots.jpg' %}" alt="image"></a>
+               <h3 style="text-align: center; margin-bottom: 0px; padding: 5px 5px">Rs.81/-</h3>
+          </div>
+     
+      <h3 style="text-align: center;"><a href="#" onMouseOver="this.style.color='#ff4301'" onMouseOut="this.style.color='#ffffff'" style="color: #ffffff">Turmeric Roots</a></h3>
+      </div>
+
+
+
+</div>
+
+
+<!--
+
+<div class="boxes">
+
+
+ 
+  
+  <a class="vegetables" data-category="vegetables" href="#"><img src="vegtomatoes.png" alt="image"></a>
+ 
+  <a class="vegetables" data-category="vegetables" href="#"><img src="vegradish.png" alt="image"></a>
+ 
+  <a class="fruits" data-category="fruits" href="#"><img src="fruitsmushroom.png" alt="image"></a>
+ 
+  <a class="fruits" data-category="fruits" href="#"><img src="fruitspotatoes.png" alt="image"></a>
+  
+  <a class="seasonal" data-category="seasonal" href="#"><img src="seasonalginger.png" alt="image"></a>
+ 
+  <a class="seasonal" data-category="seasonal" href="#"><img src="seasonalbananas.png" alt="image"></a>
+  
+  <a class="discount" data-category="discount" href="#"><img src="discountbroccoli.png" alt="image"></a>
+  
+  <a class="discount" data-category="discount" href="#"><img src="discountgarlic.png" alt="image"></a>
+ 
+
+
+</div>
+
+-->
+</div>
+
+
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.3.1/web-animations.min.js"></script>
+<script type="text/javascript" src='{% static 'landingsite/Bazaar/samplefirst.js' %}'></script>
+
+
+<footer class="footer">
+  &copy; By V.Komal Kumar 2020
+</footer>
+</body>
+</html>

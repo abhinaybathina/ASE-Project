@@ -1,0 +1,115 @@
+{% extends 'users/staff_base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="row my-5">
+    <div class="col-md-4">
+        <form method="post">
+            {% csrf_token %}
+            <fieldset class="form-group">
+            <legend class="border-bottom mb-4">
+                Query By Village/City Name
+            </legend>
+            {{ village_form|crispy }}
+            </fieldset>
+            <button type="submit" name="query_village" class="btn btn-primary">Search</button>
+        </form>
+    </div>
+
+    <div class="col-md-4">
+        {#    This form is used to fetch results based on state name#}
+        <form method="post">
+            {% csrf_token %}
+            <fieldset class="form-group">
+            <legend class="border-bottom mb-4">
+                Query By State Name
+            </legend>
+            {{ state_form|crispy }}
+            </fieldset>
+            <button type="submit" name="query_state" class="btn btn-primary">Search</button>
+        </form>
+    </div>
+    <div class="col-md-4">
+        {#    This form is used to fetch results based on the name of the crop#}
+        <form method="post">
+            {% csrf_token %}
+            <fieldset class="form-group">
+            <legend class="border-bottom mb-4">
+                Query By Crop
+            </legend>
+            {{ crop_form|crispy }}
+            </fieldset>
+            <button type="submit" name="query_crop" class="btn btn-primary">Search</button>
+        </form>
+    </div>
+</div>
+{#    This form is used to fetch results based on a village name#}
+
+    {% if village_data %}
+        <p><strong>Total Farmers in the Village : </strong> {{ village_data.Total_farmers }}</p>
+
+        <p><strong>Total Land Available for Cultivation : </strong>{{ village_data.Total_land.total_land_available__sum }} Acres</p>
+
+        <p><strong>Land Cultivating this season : </strong>{{ village_data.Land_cultivating.land_cultivating__sum }} Acres</p>
+
+        <p><strong>Major Crop of the village : </strong>{{ village_data.Major_crop }}</p>
+        <div>
+            <strong>List of crops and Expected yield : </strong>
+                <ul class="mt-3">
+                    {% for dict in village_data.Crop_list %}
+                            <li>{{ dict.crop }} - {{ dict.total }} Quintal</li>
+                    {% endfor %}
+                </ul>
+        </div>
+
+    {% endif %}
+
+    {% if state_data %}
+        <p><strong>Total Registered Villages in the State : </strong> {{ state_data.Villages_count }}</p>
+
+        <div>
+            <strong>List of Registered Villages in the state : </strong>
+            <ul class="mt-3">
+                {% for village in state_data.Villages_list%}
+                    <li>{{ village }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <p><strong>Total Farmers in the State : </strong>{{ state_data.Total_farmers }}</p>
+
+        <p><strong>Major Crop of the state : </strong>{{ state_data.Major_crop }}</p>
+
+        <div>
+            <strong>List of Crops and Expected Yield : </strong>
+            <ul class="mt-3">
+                {% for dict in state_data.Crop_list %}
+                    <li>{{ dict.crop }} - {{ dict.total }} Quintal</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <p><strong>Total Land Available for Cultivation : </strong>{{ state_data.Total_land.total_land_available__sum }} Acres</p>
+
+        <p><strong>Land Cultivating this season : </strong>{{ state_data.Land_cultivating.land_cultivating__sum }} Acres</p>
+    {% endif %}
+
+    {% if crop_data %}
+        <p><strong>Expected Yield for this crop : </strong>{{ crop_data.Expected_yield }} Quintal</p>
+
+        <p><strong>Share of this crop : </strong>{{ crop_data.Share }}%</p>
+
+        <p><strong>Number of states contributing to this crop: </strong>{{ crop_data.Total_states_contributing }}</p>
+
+        <div><strong>List of states contributing : </strong>
+            <ul class="mt-3">
+                {% for state in crop_data.States_contributing%}
+                    <li>{{ state }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <p><strong>Total Land Available for Cultivation : </strong>{{ crop_data.Land_cultivating }} Acres</p>
+    {% endif %}
+
+{% endblock content %}

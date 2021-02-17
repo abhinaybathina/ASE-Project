@@ -1,0 +1,23 @@
+{% extends 'users/user_base.html' %}
+{% block content %}
+    <h1 class="pb-3 mb-4 border-bottom" style="font-family: 'Nunito', sans-serif">Welcome to Q/A Portal!
+        <span class="pl-5">
+            <a href="{% url 'post-create' %}" class="badge badge-info" style="font-size: small">+ Add Post</a>
+        </span>
+    </h1>
+    {% for object in object_list %}
+        <article class="media content-section">
+          <img class="rounded-circle article-img" src="{{ object.author.profile.image.url }}">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ object.author }}</a>
+              <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
+            </div>
+            <h2 class="article-title">{{ object.title }}</h2>
+            <p class="article-content">{{ object.content|slice:":200" }} <span style="color: darkblue"> ... ... ...  </span></p>
+            <a href="{% url 'post-detail' object.id %}" class="card-link">Read More</a>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}
+

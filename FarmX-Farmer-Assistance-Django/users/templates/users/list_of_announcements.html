@@ -1,0 +1,37 @@
+{% extends 'users/user_base.html' %}
+{% load static %}
+{% block content %}
+    <h2 class="mb-3">List of Announcements : </h2>
+    <hr style="box-shadow: 1px 1px 1px #999">
+    {% for announcement in announcements %}
+        <div class="content-section">
+            <h5>{{ announcement.title }}</h5>
+            <span style="margin: 0 50%;font-size: 10px;" class="expandcontent">&#11167;</span>
+            <p class="announcement_content hide mt-4">{{ announcement.content }}</p>
+        </div>
+    {% endfor%}
+{% endblock content %}
+
+{% block extra_info %}
+    <button id="toggler" style="outline: none" class="ml-1 badge badge-pill badge-primary border-0 my-2">Show/Hide CropWise Yield</button>
+    <div id="cropdisplay" style="overflow: auto; height: 250px;" class="content-section hide">
+        <h5>Current Estimated Crop Yield For this Season</h5>
+        <hr style="box-shadow: 1px 1px 1px #999">
+        <ul class="m-0 p-0">
+            {% for crop, yield in crop_yield.items %}
+                <li class="list-group-item border-top-0 border-right-0 border-left-0">
+                    <span class="font-weight-bold">{{ crop }} : </span>
+                    {% if yield >= avg_yield %}
+                        <span style="color: green">{{ yield }} Qt</span>
+                    {% else %}
+                        <span class="font-weight-bold" style="color: rgba(255,0,0,0.7)">{{ yield }} Qt</span>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock extra_info %}
+
+{% block extra_js %}
+    <script src="{% static 'users/script.js' %}"></script>
+{% endblock extra_js %}

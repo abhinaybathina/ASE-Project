@@ -1,0 +1,102 @@
+body{
+    height: 100%;
+}
+html{
+    height: 100%;
+}
+.navbar{
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: 1px;
+}
+
+#Header{
+    font-family: 'Nunito', sans-serif;
+    background: url("Seedling.jpg") scroll no-repeat center;
+    background-size: cover;
+    height: 100%;
+}
+#content-2{
+    background: url("Helping-Tomatoes.jpg") fixed no-repeat center;
+    background-size: cover;
+    height: 100%;
+}
+#content-3{
+    background: url("Bowl of Carrots.jpg") scroll no-repeat center;
+    background-size: cover;
+    height: 100%;
+}
+.farm-green{
+    color: #7fd633;
+    font-weight: bold;
+}
+
+.pt-manual{
+    padding-top: 7rem;
+}
+
+p.footer-para {
+    max-width: 650px;
+    font-size: 15px;
+}
+
+/*-- footer logo --*/
+.logo2 {
+    position: relative;
+}
+
+.logo2 a {
+    font-size: 36px;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.logo2 a span.fa {
+	color: #e8cd30;
+}
+
+
+.footercopy-social ul li,
+.contact-left-footer ul li {
+    display: inline-block;
+}
+footer{
+    background: #191818;
+}
+.footercopy-social ul li a {
+    color: #333;
+    text-align: center;
+}
+
+.footercopy-social ul li a span.fa {
+    width: 20px;
+    font-size: 20px;
+    color: #666;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+}
+
+.contact-left-footer ul li p span.fa {
+    color: #aaa;
+}
+
+.contact-left-footer ul li p a,
+.contact-left-footer ul li p {
+    color: #707579;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.footer-background{
+    background: rgba(0, 0, 0, 0.5);
+}
+a:hover{
+    text-decoration: None;
+}
+span{
+    color: gold;
+    font-family: 'Nunito', sans-serif;
+}

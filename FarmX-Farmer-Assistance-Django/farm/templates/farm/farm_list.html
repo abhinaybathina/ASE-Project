@@ -1,0 +1,24 @@
+{% extends 'users/user_base.html' %}
+{% block content %}
+    {% if object_list %}
+        <h1 class="border-bottom pb-3 mb-4" style="font-family: 'Sen', sans-serif">Your Farm Details : </h1>
+        {% for object in object_list %}
+            <article class="media content-section">
+                  <div class="media-body">
+                    <div class="article-metadata">
+                      <a class="mr-2" style="font-size: 30px" href="{% url 'farm-detail' object.id %}">{{ object }}</a>
+                      <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
+                    </div>
+
+                  <p class="article-content my-1" style="font-size: 20px"><span style="font-family: 'Sen', sans-serif;font-weight: 800">Land Cultivating</span> : {{ object.land_cultivating }} Acres</p>
+                  <p class="article-content mb-0" style="font-size: 20px"><span style="font-family: 'Sen', sans-serif;font-weight: 800">Crop</span> : {{ object.crop }}</p>
+                  </div>
+            </article>
+        {% endfor %}
+        <a class="btn btn-outline-info" href="{% url 'farm-create' %}">Add new farm details</a>
+    {% else %}
+        <h3 class="my-4" style="font-family: 'Sen', sans-serif">Looks like you have not entered any farm details as of now, begin by clicking the below button</h3>
+        <a class="btn btn-outline-info" href="{% url 'farm-create' %}">Add new farm details</a>
+    {% endif %}
+{% endblock content %}
+

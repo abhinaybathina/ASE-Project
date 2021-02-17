@@ -1,0 +1,5 @@
+Django==3.0.4
+stripe==2.49.0
+requests==2.23.0
+djangorestframework==3.11.0
+Pillow==7.2.0

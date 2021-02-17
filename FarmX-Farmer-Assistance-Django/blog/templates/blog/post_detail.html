@@ -1,0 +1,77 @@
+{% extends 'users/user_base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'users/blog.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Da+2&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet">
+{% endblock extra_css %}
+{% block content %}
+    	<section class="post-area mt-5 pt-5">
+            <div class="container">
+
+			<div class="row">
+
+				<div class="col-lg-1 col-md-0"></div>
+				<div class="col-lg-10 col-md-12">
+
+					<div class="main-post">
+
+						<div class="post-top-area">
+                                <h1 class="text-center display-4 mb-5">FarmX Q/A Portal</h1>
+							<h5 class="pre-title">{{ object.type }}</h5>
+
+							<h3 class="title" style="font-family: 'Baloo Da 2', cursive;font-size: 45px;">
+                                <b>{{ object.title }}</b>
+                            </h3>
+
+							<div class="post-info">
+
+								<div class="left-area">
+									<img src="{{ object.author.profile.image.url }}" alt="Profile Image">
+								</div>
+
+								<div class="middle-area">
+									<b>By {{ object.author.username }}</b>
+									<h6 class="date">on {{ object.date_posted }}</h6>
+								</div>
+
+							</div><!-- post-info -->
+
+							<p class="para" style="font-family: 'Acme', sans-serif;">{{ object.content|slice:":1000" }}</p>
+
+						</div><!-- post-top-area -->
+
+						<div class="post-image"><img class="rounded" src="{{ object.image.url }}" alt="Blog Image"></div>
+
+						<div class="post-bottom-area">
+
+							<p class="para" style="font-family: 'Acme', sans-serif;">{{ object.content|slice:"1000:" }}</p>
+
+						</div><!-- post-bottom-area -->
+                    {% if object.author == user %}
+                    <div>
+                        <a class="badge badge-primary ml-3" href="{% url 'post-update' object.id %}">Update</a>
+                        <a class="badge badge-danger" href="{% url 'post-delete' object.id %}">Delete</a>
+                    </div>
+                    {% endif %}
+					</div><!-- main-post -->
+				</div><!-- col-lg-8 col-md-12 -->
+			</div><!-- row -->
+		</div><!-- container -->
+</section><!-- post-area -->
+    <br>
+    <hr>
+<div>
+    <h3 class="mb-5">Comment{{ comments|pluralize }} : </h3>
+    {% for comment in comments %}
+        <div>
+            <blockquote class="blockquote">
+              <p class="mb-0">{{ comment.content }}</p>
+              <p class="blockquote-footer">{{ comment.user.username }}</p>
+            </blockquote>
+            <hr>
+        </div>
+    {% endfor %}
+</div>
+{% endblock content %}

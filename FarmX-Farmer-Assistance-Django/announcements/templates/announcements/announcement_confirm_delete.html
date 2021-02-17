@@ -1,0 +1,17 @@
+{% extends 'users/staff_base.html' %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Delete this Announcement</legend>
+                <h3>Are you share you want to delete the Announcement?</h3>
+                <small class="text-muted" style="font-size: 15px">Originally Posted Date : {{ object.date_posted|date:"F d, Y" }}</small>
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-danger btn-sm" type="submit">Yes/Delete  </button>
+                <a href="{% url 'announcement-detail' object.id%}" class="btn btn-info btn-sm">No</a>
+            </div>
+        </form>
+    </div>
+{% endblock content %}

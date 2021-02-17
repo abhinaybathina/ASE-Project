@@ -1,0 +1,25 @@
+html{
+    min-height: 100%;
+}
+body{
+    background: url("Cropland.jpg") no-repeat center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+
+}
+.content-section {
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: 1px;
+    font-size: large;
+    font-weight: bolder;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+}
+
+.onselection{
+  color: white;
+  background: #4682b4;
+  border-radius: 5px;
+  box-shadow: 0 0 0 #999;
+}

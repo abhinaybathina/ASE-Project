@@ -1,0 +1,24 @@
+{% extends 'users/user_base.html' %}
+{% block content %}
+    <h1 class="border-bottom pb-3 mb-4" style="font-family: 'Sen', sans-serif">Your Farm Details : </h1>
+    <div class="content-section">
+        <article class="media">
+              <div class="media-body">
+                <div class="article-metadata">
+                  <h2 class="mr-2" style="font-size: 30px" href="#">{{ object }}</h2>
+                  <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
+                </div>
+
+              <p class="article-title mb-0" style="font-size: 20px"><span style="font-family: 'Sen', sans-serif;font-weight: 800">Total Land Owned</span> : {{ object.total_land_available }} Acres</p>
+              <p class="article-content my-1" style="font-size: 20px"><span style="font-family: 'Sen', sans-serif;font-weight: 800">Land Cultivating</span> : {{ object.land_cultivating }} Acres</p>
+              <p class="article-content mb-0" style="font-size: 20px"><span style="font-family: 'Sen', sans-serif;font-weight: 800">Crop</span> : {{ object.crop }}</p>
+              <p class="article-content my-1" style="font-size: 20px"><span style="font-family: 'Sen', sans-serif;font-weight: 800">Yield(Expecting)</span> : {{ object.expecting_yield }} Quintal</p>
+              <p class="article-content my-1" style="font-size: 20px"><span style="font-family: 'Sen', sans-serif;font-weight: 800">Water Source</span> : {{ object.water_source }} Quintal</p>
+              </div>
+        </article>
+    {% if object.owner == user %}
+          <a href="{% url 'farm-update' object.id%}" class="btn btn-info btn-sm mt-2">Update</a>
+          <a href="{% url 'farm-delete' object.id %}" class="btn btn-danger btn-sm mx-1 mt-2">Delete</a>
+    {% endif %}
+    </div>
+{% endblock content %}

@@ -1,0 +1,19 @@
+{% extends 'users/staff_base.html' %}
+{% block content %}
+    <h3 class="py-3 pl-3">
+        List of Announcements :
+        <a href="{% url 'announcement-create' %}" class="badge badge-primary" style="font-size: 12px">+ New Announcement</a>
+    </h3>
+    {% for object in object_list %}
+        <article class="media content-section">
+          <div class="media-body">
+            <h4 class="article-title">{{ object.title }}</h4>
+            <div class="article-metadata">
+              <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
+            </div>
+            <p class="border-top pt-3 article-content">{{ object.content|slice:":250" }} <span style="color: darkblue"> ... ... ...  </span></p>
+            <a href="{% url 'announcement-detail' object.id %}" class="card-link">Read More</a>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}

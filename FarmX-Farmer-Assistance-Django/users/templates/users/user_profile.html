@@ -1,0 +1,31 @@
+{% extends "users/user_base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <h1 class="display-4 mb-4">Welcome to your profile! </h1>
+    <div class="content-section">
+      <div class="media">
+        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+        <div class="media-body">
+          <h2 class="account-heading">{{ user.username }}</h2>
+          <p class="text-secondary">{{ user.email }}</p>
+          {% if user.profile.phone_number%}
+              <span class="text-secondary"><span class="text-dark">Mobile number : </span>{{ user.profile.phone_number }}</span>
+          {% endif %}
+          {% if user.profile.phone_number%}
+              <p class="text-secondary"><span class="text-dark">Village : </span>{{ user.profile.village }}</p>
+          {% endif %}
+        </div>
+      </div>
+      <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <fieldset class="form-group">
+              <legend class="border-bottom mb-4">Profile Info</legend>
+              {{ u_form|crispy }}
+              {{ p_form|crispy }}
+          </fieldset>
+          <div class="form-group">
+              <button class="btn btn-info" type="submit">Save/Update</button>
+          </div>
+      </form>
+    </div>
+{% endblock content %}

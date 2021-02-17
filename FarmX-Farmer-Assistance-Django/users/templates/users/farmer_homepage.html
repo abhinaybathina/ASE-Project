@@ -1,0 +1,46 @@
+{% extends 'users/user_base.html' %}
+{% block content %}
+    <p class="display-4" style="font-family: 'Sen', sans-serif;">Hello {{ user.username }}</p>
+    <hr style="box-shadow: 1px 1px 1px #000">
+    <p style="font-family: 'Sen', sans-serif;font-size: large"> Hello! and welcome to your personal homepage . Fell free to take a tour .</p>
+    <br>
+    <p class="mb-4" style="font-family: 'Sen', sans-serif;font-size: large">There are many options available for your assistance . You can click on the sections in the sidebar that
+    takes you to the particular section . Below is the description of each section you can access  as of now .
+    </p>
+
+    <ul class="list-group my-4 box-style">
+        <li class="list-group-item">
+            <span style="color: #4682b4;font-weight: bolder;font-family: 'Sen', sans-serif">Farms : </span>
+            <span style="font-family: 'HP Simplified'">
+                Let's you add details of your own farm .
+                This will help us track the progress of each type of crop
+                and also helps you to better understand the current crop trends
+                going in the country.
+            </span>
+        </li>
+        <li class="list-group-item">
+            <span style="color:#871614;font-weight: bolder;font-family: 'Sen', sans-serif">Weather Updates : </span>
+                <span style="font-family: 'HP Simplified'">
+                    This gets you an accurate information of the current
+                    weather in the region of the farm, or you can even change the location
+                    to get the accurate weather of another location.
+                </span>
+        </li>
+        <li class="list-group-item">
+            <span style="color: #A97142;font-weight: bolder;font-family: 'Sen', sans-serif">Q/A Portal : </span>
+                <span style="font-family: 'HP Simplified'">
+                    The Q/A Portal lets you post a question/info regarding
+                    regarding an issue you're facing or be it a suggestion you want to make to the community . You can even answer
+                    other's questions/doubts using this.
+                </span>
+        </li>
+        <li class="list-group-item">
+            <span style="color: #C93040;font-weight: bolder;font-family: 'Sen', sans-serif">Announcements : </span>
+                <span style="font-family: 'HP Simplified'">
+                    Important announcements made by the Govt staff are available here . You can also view the current
+                    estimated yield of crops in this page by navigating into the announcements page and clicking
+                    view crop yields button.
+                </span>
+        </li>
+    </ul>
+{% endblock content %}

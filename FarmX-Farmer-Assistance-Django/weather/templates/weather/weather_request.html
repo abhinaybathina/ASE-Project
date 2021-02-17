@@ -1,0 +1,35 @@
+{% extends 'users/user_base.html' %}
+{% block content %}
+    <div class="container">
+        <h1 class="display-4 mb-5" style="font-weight: bold; font-family:'Sen', sans-serif;">What's the weather like?</h1>
+
+        <div class="border-bottom">
+            <h2 style="font-family:'Sen', sans-serif;">The Effects of Weather on Agriculture :</h2>
+        </div>
+
+        <p class="mt-3">Regardless of how profitable agriculture is, the prevailing weather condition of the place affects it significantly.
+            The effect is because a change in the weather condition affects agricultural practices to thrive and yield increase.
+            One of the most important parameter is the <strong><em>temperature</em></strong>. Nowadays predicting the weather has become a challenging task even for
+            farmers, who were once an expert in these kind of things. So as to be prepared for sudden changes in the weather, enter your village
+            location in the below box to get an accurate weather info of your village.
+        </p>
+    </div>
+
+    <section class="content-section text-left mt-5 container">
+    <h3 class="ml-3">Get Current Weather</h3>
+        <div class="container">
+        <form method="POST" action="response/">
+            {% csrf_token %}
+            <div class="form-group">
+                <div class="control is-expanded mb-3">
+                    <input class="form-control" type="text" value="{{ user.profile.village }}" id="city_name" name="city_name">
+                    <small class="ml-1 form-text text-muted">Enter the city name to get current weather details for the city.</small>
+                </div>
+                <button class="btn btn-info">
+                    Get Weather Details
+                </button>
+            </div>
+        </form>
+    </div>
+    </section>
+{% endblock content %}

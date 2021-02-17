@@ -1,0 +1,20 @@
+{% extends 'users/staff_base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">
+                    Update Announcement
+                    <br>
+                    <small class="text-muted" style="font-size: 15px">Originally Posted Date : {{ object.date_posted|date:"F d, Y" }}</small>
+                </legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-info" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+{% endblock content %}

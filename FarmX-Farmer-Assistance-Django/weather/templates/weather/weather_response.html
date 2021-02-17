@@ -1,0 +1,12 @@
+{% extends 'users/user_base.html' %}
+{% block content %}
+    <h1 style="font-family:'Sen', sans-serif;" class="mb-4">
+        You can find the weather details below!
+    </h1>
+    <div class="content-section">
+        <img src="http://openweathermap.org/img/w/{{ icon }}.png" alt="Weather-Image" width="60px">
+        <h4 style="font-family:'Sen', sans-serif;">City : <span class="text-muted">{{ city }}</span></h4>
+        <h4 style="font-family:'Sen', sans-serif;">Temperature : <span class="text-muted">{{ temperature }}° C</span></h4>
+        <h4 style="font-family:'Sen', sans-serif;">Weather Condition : <span class="text-muted text-capitalize">{{ description }}</span></h4>
+    </div>
+{% endblock content %}

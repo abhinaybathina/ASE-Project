@@ -1,0 +1,30 @@
+{% extends 'users/staff_base.html' %}
+
+{#context from django : crop_yield and crop_land#}
+{#both crop_yield and crop_land are dicts#}
+{#both contain crops as keys and yield, land as values#}
+{% block content %}
+    <h3>Crop and Expecting Yield</h3>
+    <div class="row">
+        {% for crop, yield in crop_yield.items %}
+            <div class="col-md-3">
+                <span style="font-size: 25px">
+                    {{ crop }} - <span class="text-muted">{{ yield }} Qt</span>
+                </span>
+            </div>
+        {% endfor %}
+    </div>
+    <br>
+    <br>
+    <br>
+    <h3>Crop and Land Cultivating</h3>
+    <div class="row">
+        {% for crop, land in crop_land.items %}
+            <div class="col-md-3">
+                <span style="font-size: 25px">
+                    {{ crop }} - <span class="text-muted">{{ land }} Acres</span>
+                </span>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}

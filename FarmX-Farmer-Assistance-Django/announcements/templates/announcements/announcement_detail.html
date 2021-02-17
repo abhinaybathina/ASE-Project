@@ -1,0 +1,16 @@
+{% extends 'users/staff_base.html' %}
+{% block content %}
+    <h4 class="py-3 pl-2">Announced On {{ object.date_posted|date:"F d, Y" }}</h4>
+        <div class="content-section">
+            <article class="media">
+                <div class="media-body">
+                    <h4 class="article-title">{{ object.title }}</h4>
+                    <p class="border-top pt-3 article-content">{{ object.content }} <span style="color: darkblue"></span></p>
+                </div>
+            </article>
+            <div>
+                <a class="badge badge-dark mr-1" href="{% url 'announcement-update' object.id %}">Update</a>
+                <a class="badge badge-danger ml-1" href="{% url 'announcement-delete' object.id %}">Delete</a>
+            </div>
+        </div>
+{% endblock content %}
